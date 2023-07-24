@@ -31,3 +31,13 @@ class Piece:
         self.row = row
         self.col = col
         self.calc_pos()
+#Function to get actions for player(state), takes two arguments current board state and current player 
+    def get_Actions(state, player):
+        actions = []
+        for i in range(board_Size):
+            for a in range(board_Size):
+                if state[i, a] == player:
+                    if 0 <= x < board_Size and 0 <= y < board_Size and state[x,y] == 0:
+                            actions.append((i,a,x,y))
+        return actions
+        
